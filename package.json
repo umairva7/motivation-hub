@@ -1,0 +1,24 @@
+{
+  "name": "motivation-hub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umairva7/motivation-hub.git"
+  },
+  "author": "Umair Imran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/umairva7/motivation-hub/issues"
+  },
+  "homepage": "https://github.com/umairva7/motivation-hub#readme",
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "mongoose": "^8.18.1"
+  }
+}

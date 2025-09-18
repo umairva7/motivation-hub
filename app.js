@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import Quote from "./models/Quote.js";
+import { admin } from "./middleware/admin.js";
 
 dotenv.config();
 const app = express();
@@ -18,11 +19,12 @@ app.get("/", (req, res) => {
 });
 
 // Insert a quote
-app.post("/add-quote", async (req, res) => {
+app.post("add-quote", admin, async (req, res) => {
   try {
-    const newQuote = new Quote(req.body);
+    const { text, author, category } = req.body;
+    const newQuote = new Quote({ text, author, category });
     await newQuote.save();
-    res.json(newQuote);
+    res.status(201).json(newQuote);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
